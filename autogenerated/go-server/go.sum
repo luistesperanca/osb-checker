@@ -1,0 +1,12 @@
+github.com/ghodss/yaml v1.0.0 h1:wQHKEahhL6wmXdzwWG11gIVCkOv05bNOh+Rxn0yngAk=
+github.com/ghodss/yaml v1.0.0/go.mod h1:4dBDuWmgqj2HViK6kFavaiC9ZROes6MMH2rRYeMEF04=
+github.com/gorilla/mux v1.7.3 h1:gnP5JzjVOuiZD07fKKToCAOjS0yOpj/qPETTXCCS6hw=
+github.com/gorilla/mux v1.7.3/go.mod h1:1lud6UwP+6orDFRuTfBEV8e9/aOM/c4fVVCaMa2zaAs=
+github.com/luistesperanca/osb-checker v0.0.0-20190827084956-e6d47cbaed87 h1:zrPP7s3WLXQmZzU9HwGuLK/eA7Ir7lm5kL8lTKM6J5Q=
+github.com/luistesperanca/osb-checker v0.0.0-20190827084956-e6d47cbaed87/go.mod h1:mtgr03hcAe7NaZQSVTwK8b4yPlzieX7MMFFRQVUTJpQ=
+github.com/openservicebrokerapi/osb-checker v0.0.0-20190827084956-e6d47cbaed87 h1:+Ssz4xXqRmTEb8YtHRW3LyMvc+1oh8S0DIG36ErZqsI=
+github.com/openservicebrokerapi/osb-checker v0.0.0-20190827084956-e6d47cbaed87/go.mod h1:BnR/iw26jRPcFenTHjGUEjoodAnCTsqrkfTE6PzFSkQ=
+gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405 h1:yhCVgyC4o1eVCa2tZl7eS0r+SDo693bJlVdllGtEeKM=
+gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
+gopkg.in/yaml.v2 v2.4.0 h1:D8xgwECY7CYvx+Y2n4sBz93Jn9JRvxdiyyo8CTfuKaY=
+gopkg.in/yaml.v2 v2.4.0/go.mod h1:RDklbk79AGWmwhnvt/jBztapEOGDOx6ZbXqjP6csGnQ=

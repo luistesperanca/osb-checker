@@ -11,5 +11,8 @@
 package openapi
 
 type ServiceInstanceProvisionResponse struct {
+
 	DashboardUrl string `json:"dashboard_url,omitempty"`
+
+	Metadata ServiceInstanceMetadata `json:"metadata,omitempty"`
 }

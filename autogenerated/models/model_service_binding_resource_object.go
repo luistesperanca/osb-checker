@@ -11,6 +11,7 @@
 package openapi
 
 type ServiceBindingResourceObject struct {
+
 	AppGuid string `json:"app_guid,omitempty"`
 
 	Route string `json:"route,omitempty"`

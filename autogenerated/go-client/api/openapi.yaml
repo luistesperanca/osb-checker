@@ -42,19 +42,19 @@ paths:
         schema:
           type: string
       responses:
-        200:
+        "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Catalog'
           description: catalog response
-        401:
+        "401":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Unauthorized
-        412:
+        "412":
           content:
             application/json:
               schema:
@@ -114,43 +114,43 @@ paths:
         schema:
           type: string
       responses:
-        200:
+        "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Object'
+                type: object
           description: OK
-        202:
+        "202":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/AsyncOperation'
           description: Accepted
-        400:
+        "400":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Bad Request
-        401:
+        "401":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Unauthorized
-        410:
+        "410":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Gone
-        412:
+        "412":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Precondition Failed
-        422:
+        "422":
           content:
             application/json:
               schema:
@@ -202,25 +202,25 @@ paths:
         schema:
           type: string
       responses:
-        200:
+        "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ServiceInstanceResource'
           description: OK
-        401:
+        "401":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Unauthorized
-        404:
+        "404":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Not Found
-        412:
+        "412":
           content:
             application/json:
               schema:
@@ -274,37 +274,37 @@ paths:
         description: parameters for the requested service instance update
         required: true
       responses:
-        200:
+        "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Object'
+                type: object
           description: OK
-        202:
+        "202":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ServiceInstanceAsyncOperation'
           description: Accepted
-        400:
+        "400":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Bad Request
-        401:
+        "401":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Unauthorized
-        412:
+        "412":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Precondition Failed
-        422:
+        "422":
           content:
             application/json:
               schema:
@@ -359,49 +359,49 @@ paths:
         description: parameters for the requested service instance provision
         required: true
       responses:
-        200:
+        "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ServiceInstanceProvisionResponse'
           description: OK
-        201:
+        "201":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ServiceInstanceProvisionResponse'
           description: Created
-        202:
+        "202":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ServiceInstanceAsyncOperation'
           description: Accepted
-        400:
+        "400":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Bad Request
-        401:
+        "401":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Unauthorized
-        409:
+        "409":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Conflict
-        412:
+        "412":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Precondition Failed
-        422:
+        "422":
           content:
             application/json:
               schema:
@@ -460,7 +460,7 @@ paths:
         schema:
           type: string
       responses:
-        200:
+        "200":
           content:
             application/json:
               schema:
@@ -471,25 +471,31 @@ paths:
               description: Indicates when to retry the request
               schema:
                 type: string
-        400:
+        "400":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Bad Request
-        401:
+        "401":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Unauthorized
-        410:
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+        "410":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Gone
-        412:
+        "412":
           content:
             application/json:
               schema:
@@ -553,7 +559,7 @@ paths:
         schema:
           type: string
       responses:
-        200:
+        "200":
           content:
             application/json:
               schema:
@@ -564,25 +570,31 @@ paths:
               description: Indicates when to retry the request
               schema:
                 type: string
-        400:
+        "400":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Bad Request
-        401:
+        "401":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Unauthorized
-        410:
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+        "410":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Gone
-        412:
+        "412":
           content:
             application/json:
               schema:
@@ -648,43 +660,43 @@ paths:
         schema:
           type: boolean
       responses:
-        200:
+        "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Object'
+                type: object
           description: OK
-        202:
+        "202":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/AsyncOperation'
           description: Accepted
-        400:
+        "400":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Bad Request
-        401:
+        "401":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Unauthorized
-        410:
+        "410":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Gone
-        412:
+        "412":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Precondition Failed
-        422:
+        "422":
           content:
             application/json:
               schema:
@@ -742,25 +754,25 @@ paths:
         schema:
           type: string
       responses:
-        200:
+        "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ServiceBindingResource'
           description: OK
-        401:
+        "401":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Unauthorized
-        404:
+        "404":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Not Found
-        412:
+        "412":
           content:
             application/json:
               schema:
@@ -820,55 +832,55 @@ paths:
         description: parameters for the requested service binding
         required: true
       responses:
-        200:
+        "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ServiceBindingResponse'
           description: OK
-        201:
+        "201":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ServiceBindingResponse'
           description: Created
-        202:
+        "202":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/AsyncOperation'
           description: Accepted
-        400:
+        "400":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Bad Request
-        401:
+        "401":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Unauthorized
-        409:
+        "409":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Conflict
-        410:
+        "410":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Gone
-        412:
+        "412":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Precondition Failed
-        422:
+        "422":
           content:
             application/json:
               schema:
@@ -982,6 +994,7 @@ components:
         - allow_context_updates: true
           metadata: '{}'
           instances_retrievable: true
+          binding_rotatable: true
           description: description
           tags:
           - tags
@@ -1005,6 +1018,7 @@ components:
                 update:
                   parameters: '{}'
             name: name
+            binding_rotatable: false
             description: description
             id: id
             free: true
@@ -1025,6 +1039,7 @@ components:
                 update:
                   parameters: '{}'
             name: name
+            binding_rotatable: false
             description: description
             id: id
             free: true
@@ -1042,6 +1057,7 @@ components:
         - allow_context_updates: true
           metadata: '{}'
           instances_retrievable: true
+          binding_rotatable: true
           description: description
           tags:
           - tags
@@ -1065,6 +1081,7 @@ components:
                 update:
                   parameters: '{}'
             name: name
+            binding_rotatable: false
             description: description
             id: id
             free: true
@@ -1085,6 +1102,7 @@ components:
                 update:
                   parameters: '{}'
             name: name
+            binding_rotatable: false
             description: description
             id: id
             free: true
@@ -1110,6 +1128,7 @@ components:
         allow_context_updates: true
         metadata: '{}'
         instances_retrievable: true
+        binding_rotatable: true
         description: description
         tags:
         - tags
@@ -1133,6 +1152,7 @@ components:
               update:
                 parameters: '{}'
           name: name
+          binding_rotatable: false
           description: description
           id: id
           free: true
@@ -1153,6 +1173,7 @@ components:
               update:
                 parameters: '{}'
           name: name
+          binding_rotatable: false
           description: description
           id: id
           free: true
@@ -1200,6 +1221,8 @@ components:
           type: object
         dashboard_client:
           $ref: '#/components/schemas/DashboardClient'
+        binding_rotatable:
+          type: boolean
         plan_updateable:
           type: boolean
         plans:
@@ -1247,6 +1270,7 @@ components:
             update:
               parameters: '{}'
         name: name
+        binding_rotatable: false
         description: description
         id: id
         free: true
@@ -1275,6 +1299,9 @@ components:
           type: integer
         maintenance_info:
           $ref: '#/components/schemas/MaintenanceInfo'
+        binding_rotatable:
+          default: false
+          type: boolean
       required:
       - description
       - id
@@ -1327,6 +1354,12 @@ components:
       type: object
     ServiceInstanceResource:
       example:
+        metadata:
+          attributes: '{}'
+          labels: '{}'
+        maintenance_info:
+          description: description
+          version: version
         service_id: service_id
         dashboard_url: dashboard_url
         parameters: '{}'
@@ -1339,7 +1372,12 @@ components:
         dashboard_url:
           type: string
         parameters:
+          properties: {}
           type: object
+        maintenance_info:
+          $ref: '#/components/schemas/MaintenanceInfo'
+        metadata:
+          $ref: '#/components/schemas/ServiceInstanceMetadata'
       type: object
     ServiceInstanceProvisionRequest:
       example:
@@ -1368,6 +1406,7 @@ components:
           type: string
           x-deprecated: true
         parameters:
+          properties: {}
           type: object
         maintenance_info:
           $ref: '#/components/schemas/MaintenanceInfo'
@@ -1379,10 +1418,15 @@ components:
       type: object
     ServiceInstanceProvisionResponse:
       example:
+        metadata:
+          attributes: '{}'
+          labels: '{}'
         dashboard_url: dashboard_url
       properties:
         dashboard_url:
           type: string
+        metadata:
+          $ref: '#/components/schemas/ServiceInstanceMetadata'
       type: object
     ServiceInstanceAsyncOperation:
       properties:
@@ -1390,6 +1434,8 @@ components:
           type: string
         operation:
           type: string
+        metadata:
+          $ref: '#/components/schemas/ServiceInstanceMetadata'
       type: object
     ServiceInstanceUpdateRequest:
       example:
@@ -1418,6 +1464,7 @@ components:
         plan_id:
           type: string
         parameters:
+          properties: {}
           type: object
         previous_values:
           $ref: '#/components/schemas/ServiceInstancePreviousValues'
@@ -1479,7 +1526,21 @@ components:
       type: object
     ServiceBindingResource:
       example:
+        metadata:
+          expires_at: expires_at
+          renew_before: renew_before
         route_service_url: route_service_url
+        endpoints:
+        - protocol: tcp
+          host: host
+          ports:
+          - ports
+          - ports
+        - protocol: tcp
+          host: host
+          ports:
+          - ports
+          - ports
         credentials: '{}'
         syslog_drain_url: syslog_drain_url
         volume_mounts:
@@ -1499,7 +1560,10 @@ components:
           container_dir: container_dir
         parameters: '{}'
       properties:
+        metadata:
+          $ref: '#/components/schemas/ServiceBindingMetadata'
         credentials:
+          properties: {}
           type: object
         syslog_drain_url:
           type: string
@@ -1509,12 +1573,18 @@ components:
           items:
             $ref: '#/components/schemas/ServiceBindingVolumeMount'
           type: array
+        endpoints:
+          items:
+            $ref: '#/components/schemas/ServiceBindingEndpoint'
+          type: array
         parameters:
+          properties: {}
           type: object
       type: object
     ServiceBindingRequest:
       example:
         app_guid: app_guid
+        predecessor_binding_id: predecessor_binding_id
         service_id: service_id
         context: '{}'
         bind_resource:
@@ -1537,7 +1607,10 @@ components:
         bind_resource:
           $ref: '#/components/schemas/ServiceBindingResourceObject'
         parameters:
+          properties: {}
           type: object
+        predecessor_binding_id:
+          type: string
       required:
       - plan_id
       - service_id
@@ -1554,7 +1627,21 @@ components:
       type: object
     ServiceBindingResponse:
       example:
+        metadata:
+          expires_at: expires_at
+          renew_before: renew_before
         route_service_url: route_service_url
+        endpoints:
+        - protocol: tcp
+          host: host
+          ports:
+          - ports
+          - ports
+        - protocol: tcp
+          host: host
+          ports:
+          - ports
+          - ports
         credentials: '{}'
         syslog_drain_url: syslog_drain_url
         volume_mounts:
@@ -1573,7 +1660,10 @@ components:
             mount_config: '{}'
           container_dir: container_dir
       properties:
+        metadata:
+          $ref: '#/components/schemas/ServiceBindingMetadata'
         credentials:
+          properties: {}
           type: object
         syslog_drain_url:
           type: string
@@ -1583,6 +1673,45 @@ components:
           items:
             $ref: '#/components/schemas/ServiceBindingVolumeMount'
           type: array
+        endpoints:
+          items:
+            $ref: '#/components/schemas/ServiceBindingEndpoint'
+          type: array
+      type: object
+    ServiceBindingMetadata:
+      example:
+        expires_at: expires_at
+        renew_before: renew_before
+      properties:
+        expires_at:
+          type: string
+        renew_before:
+          type: string
+      type: object
+    ServiceBindingEndpoint:
+      example:
+        protocol: tcp
+        host: host
+        ports:
+        - ports
+        - ports
+      properties:
+        host:
+          type: string
+        ports:
+          items:
+            type: string
+          type: array
+        protocol:
+          default: tcp
+          enum:
+          - tcp
+          - udp
+          - all
+          type: string
+      required:
+      - host
+      - ports
       type: object
     ServiceBindingVolumeMount:
       example:
@@ -1624,9 +1753,22 @@ components:
         volume_id:
           type: string
         mount_config:
+          properties: {}
           type: object
       required:
       - volume_id
+      type: object
+    ServiceInstanceMetadata:
+      example:
+        attributes: '{}'
+        labels: '{}'
+      properties:
+        labels:
+          properties: {}
+          type: object
+        attributes:
+          properties: {}
+          type: object
       type: object
     MaintenanceInfo:
       example:
@@ -1663,3 +1805,4 @@ components:
     basicAuth:
       scheme: basic
       type: http
+x-original-swagger-version: "2.0"

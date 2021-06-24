@@ -11,5 +11,6 @@
 package openapi
 
 type ServiceBindingSchemaObject struct {
+
 	Create SchemaParameters `json:"create,omitempty"`
 }

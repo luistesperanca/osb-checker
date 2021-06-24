@@ -1,7 +1,7 @@
 dist: xenial
 
 language: go
-go_import_path: github.com/openservicebrokerapi/osb-checker
+go_import_path: github.com/luistesperanca/osb-checker
 
 go:
   - 1.12.x

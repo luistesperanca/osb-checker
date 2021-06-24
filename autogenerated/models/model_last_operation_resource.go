@@ -11,6 +11,7 @@
 package openapi
 
 type LastOperationResource struct {
+
 	State string `json:"state"`
 
 	Description string `json:"description,omitempty"`

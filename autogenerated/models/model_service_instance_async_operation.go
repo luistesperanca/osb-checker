@@ -11,7 +11,10 @@
 package openapi
 
 type ServiceInstanceAsyncOperation struct {
+
 	DashboardUrl string `json:"dashboard_url,omitempty"`
 
 	Operation string `json:"operation,omitempty"`
+
+	Metadata ServiceInstanceMetadata `json:"metadata,omitempty"`
 }

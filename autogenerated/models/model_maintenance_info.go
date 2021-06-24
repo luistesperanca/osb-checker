@@ -11,6 +11,7 @@
 package openapi
 
 type MaintenanceInfo struct {
+
 	Version string `json:"version,omitempty"`
 
 	Description string `json:"description,omitempty"`

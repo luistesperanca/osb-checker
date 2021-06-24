@@ -11,6 +11,9 @@
 package openapi
 
 type ServiceBindingResource struct {
+
+	Metadata ServiceBindingMetadata `json:"metadata,omitempty"`
+
 	Credentials map[string]interface{} `json:"credentials,omitempty"`
 
 	SyslogDrainUrl string `json:"syslog_drain_url,omitempty"`
@@ -18,6 +21,8 @@ type ServiceBindingResource struct {
 	RouteServiceUrl string `json:"route_service_url,omitempty"`
 
 	VolumeMounts []ServiceBindingVolumeMount `json:"volume_mounts,omitempty"`
+
+	Endpoints []ServiceBindingEndpoint `json:"endpoints,omitempty"`
 
 	Parameters map[string]interface{} `json:"parameters,omitempty"`
 }

@@ -13,7 +13,6 @@ To see how to make this your own, look here:
 [README](https://openapi-generator.tech)
 
 - API version: master - might contain changes that are not yet released
-- Build date: 2019-06-18T07:05:12.640Z[GMT]
 For more information, please visit [https://www.openservicebrokerapi.org/](https://www.openservicebrokerapi.org/)
 
 

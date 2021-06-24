@@ -13,35 +13,66 @@ Method | HTTP request | Description
 
 ## ServiceBindingBinding
 
-> ServiceBindingResponse ServiceBindingBinding(ctx, xBrokerAPIVersion, instanceId, bindingId, body, optional)
+> ServiceBindingResponse ServiceBindingBinding(ctx, instanceId, bindingId).XBrokerAPIVersion(xBrokerAPIVersion).Body(body).XBrokerAPIOriginatingIdentity(xBrokerAPIOriginatingIdentity).XBrokerAPIRequestIdentity(xBrokerAPIRequestIdentity).AcceptsIncomplete(acceptsIncomplete).Execute()
+
 generation of a service binding
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xBrokerAPIVersion := "xBrokerAPIVersion_example" // string | version number of the Service Broker API that the Platform will use
+    instanceId := "instanceId_example" // string | instance id of instance to provision
+    bindingId := "bindingId_example" // string | binding id of binding to create
+    body := *openapiclient.NewServiceBindingRequest("ServiceId_example", "PlanId_example") // ServiceBindingRequest | parameters for the requested service binding
+    xBrokerAPIOriginatingIdentity := "xBrokerAPIOriginatingIdentity_example" // string | identity of the user that initiated the request from the Platform (optional)
+    xBrokerAPIRequestIdentity := "xBrokerAPIRequestIdentity_example" // string | idenity of the request from the Platform (optional)
+    acceptsIncomplete := true // bool | asynchronous operations supported (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ServiceBindingsApi.ServiceBindingBinding(context.Background(), instanceId, bindingId).XBrokerAPIVersion(xBrokerAPIVersion).Body(body).XBrokerAPIOriginatingIdentity(xBrokerAPIOriginatingIdentity).XBrokerAPIRequestIdentity(xBrokerAPIRequestIdentity).AcceptsIncomplete(acceptsIncomplete).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ServiceBindingsApi.ServiceBindingBinding``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ServiceBindingBinding`: ServiceBindingResponse
+    fmt.Fprintf(os.Stdout, "Response from `ServiceBindingsApi.ServiceBindingBinding`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**xBrokerAPIVersion** | **string**| version number of the Service Broker API that the Platform will use | 
-**instanceId** | **string**| instance id of instance to provision | 
-**bindingId** | **string**| binding id of binding to create | 
-**body** | [**ServiceBindingRequest**](ServiceBindingRequest.md)| parameters for the requested service binding | 
- **optional** | ***ServiceBindingBindingOpts** | optional parameters | nil if no parameters
+**instanceId** | **string** | instance id of instance to provision | 
+**bindingId** | **string** | binding id of binding to create | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a ServiceBindingBindingOpts struct
+Other parameters are passed through a pointer to a apiServiceBindingBindingRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **xBrokerAPIVersion** | **string** | version number of the Service Broker API that the Platform will use | 
 
 
-
-
- **xBrokerAPIOriginatingIdentity** | **optional.String**| identity of the user that initiated the request from the Platform | 
- **xBrokerAPIRequestIdentity** | **optional.String**| idenity of the request from the Platform | 
- **acceptsIncomplete** | **optional.Bool**| asynchronous operations supported | 
+ **body** | [**ServiceBindingRequest**](ServiceBindingRequest.md) | parameters for the requested service binding | 
+ **xBrokerAPIOriginatingIdentity** | **string** | identity of the user that initiated the request from the Platform | 
+ **xBrokerAPIRequestIdentity** | **string** | idenity of the request from the Platform | 
+ **acceptsIncomplete** | **bool** | asynchronous operations supported | 
 
 ### Return type
 
@@ -63,34 +94,66 @@ Name | Type | Description  | Notes
 
 ## ServiceBindingGet
 
-> ServiceBindingResource ServiceBindingGet(ctx, xBrokerAPIVersion, instanceId, bindingId, optional)
+> ServiceBindingResource ServiceBindingGet(ctx, instanceId, bindingId).XBrokerAPIVersion(xBrokerAPIVersion).XBrokerAPIOriginatingIdentity(xBrokerAPIOriginatingIdentity).XBrokerAPIRequestIdentity(xBrokerAPIRequestIdentity).ServiceId(serviceId).PlanId(planId).Execute()
+
 gets a service binding
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xBrokerAPIVersion := "xBrokerAPIVersion_example" // string | version number of the Service Broker API that the Platform will use
+    instanceId := "instanceId_example" // string | instance id of instance to provision
+    bindingId := "bindingId_example" // string | binding id of binding to create
+    xBrokerAPIOriginatingIdentity := "xBrokerAPIOriginatingIdentity_example" // string | identity of the user that initiated the request from the Platform (optional)
+    xBrokerAPIRequestIdentity := "xBrokerAPIRequestIdentity_example" // string | idenity of the request from the Platform (optional)
+    serviceId := "serviceId_example" // string | id of the service associated with the instance (optional)
+    planId := "planId_example" // string | id of the plan associated with the instance (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ServiceBindingsApi.ServiceBindingGet(context.Background(), instanceId, bindingId).XBrokerAPIVersion(xBrokerAPIVersion).XBrokerAPIOriginatingIdentity(xBrokerAPIOriginatingIdentity).XBrokerAPIRequestIdentity(xBrokerAPIRequestIdentity).ServiceId(serviceId).PlanId(planId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ServiceBindingsApi.ServiceBindingGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ServiceBindingGet`: ServiceBindingResource
+    fmt.Fprintf(os.Stdout, "Response from `ServiceBindingsApi.ServiceBindingGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**xBrokerAPIVersion** | **string**| version number of the Service Broker API that the Platform will use | 
-**instanceId** | **string**| instance id of instance to provision | 
-**bindingId** | **string**| binding id of binding to create | 
- **optional** | ***ServiceBindingGetOpts** | optional parameters | nil if no parameters
+**instanceId** | **string** | instance id of instance to provision | 
+**bindingId** | **string** | binding id of binding to create | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a ServiceBindingGetOpts struct
+Other parameters are passed through a pointer to a apiServiceBindingGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **xBrokerAPIVersion** | **string** | version number of the Service Broker API that the Platform will use | 
 
 
-
- **xBrokerAPIOriginatingIdentity** | **optional.String**| identity of the user that initiated the request from the Platform | 
- **xBrokerAPIRequestIdentity** | **optional.String**| idenity of the request from the Platform | 
- **serviceId** | **optional.String**| id of the service associated with the instance | 
- **planId** | **optional.String**| id of the plan associated with the instance | 
+ **xBrokerAPIOriginatingIdentity** | **string** | identity of the user that initiated the request from the Platform | 
+ **xBrokerAPIRequestIdentity** | **string** | idenity of the request from the Platform | 
+ **serviceId** | **string** | id of the service associated with the instance | 
+ **planId** | **string** | id of the plan associated with the instance | 
 
 ### Return type
 
@@ -112,35 +175,68 @@ Name | Type | Description  | Notes
 
 ## ServiceBindingLastOperationGet
 
-> LastOperationResource ServiceBindingLastOperationGet(ctx, xBrokerAPIVersion, instanceId, bindingId, optional)
+> LastOperationResource ServiceBindingLastOperationGet(ctx, instanceId, bindingId).XBrokerAPIVersion(xBrokerAPIVersion).XBrokerAPIOriginatingIdentity(xBrokerAPIOriginatingIdentity).XBrokerAPIRequestIdentity(xBrokerAPIRequestIdentity).ServiceId(serviceId).PlanId(planId).Operation(operation).Execute()
+
 last requested operation state for service binding
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xBrokerAPIVersion := "xBrokerAPIVersion_example" // string | version number of the Service Broker API that the Platform will use
+    instanceId := "instanceId_example" // string | instance id of instance to provision
+    bindingId := "bindingId_example" // string | binding id of binding to create
+    xBrokerAPIOriginatingIdentity := "xBrokerAPIOriginatingIdentity_example" // string | identity of the user that initiated the request from the Platform (optional)
+    xBrokerAPIRequestIdentity := "xBrokerAPIRequestIdentity_example" // string | idenity of the request from the Platform (optional)
+    serviceId := "serviceId_example" // string | id of the service associated with the instance (optional)
+    planId := "planId_example" // string | id of the plan associated with the instance (optional)
+    operation := "operation_example" // string | a provided identifier for the operation (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ServiceBindingsApi.ServiceBindingLastOperationGet(context.Background(), instanceId, bindingId).XBrokerAPIVersion(xBrokerAPIVersion).XBrokerAPIOriginatingIdentity(xBrokerAPIOriginatingIdentity).XBrokerAPIRequestIdentity(xBrokerAPIRequestIdentity).ServiceId(serviceId).PlanId(planId).Operation(operation).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ServiceBindingsApi.ServiceBindingLastOperationGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ServiceBindingLastOperationGet`: LastOperationResource
+    fmt.Fprintf(os.Stdout, "Response from `ServiceBindingsApi.ServiceBindingLastOperationGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**xBrokerAPIVersion** | **string**| version number of the Service Broker API that the Platform will use | 
-**instanceId** | **string**| instance id of instance to provision | 
-**bindingId** | **string**| binding id of binding to create | 
- **optional** | ***ServiceBindingLastOperationGetOpts** | optional parameters | nil if no parameters
+**instanceId** | **string** | instance id of instance to provision | 
+**bindingId** | **string** | binding id of binding to create | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a ServiceBindingLastOperationGetOpts struct
+Other parameters are passed through a pointer to a apiServiceBindingLastOperationGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **xBrokerAPIVersion** | **string** | version number of the Service Broker API that the Platform will use | 
 
 
-
- **xBrokerAPIOriginatingIdentity** | **optional.String**| identity of the user that initiated the request from the Platform | 
- **xBrokerAPIRequestIdentity** | **optional.String**| idenity of the request from the Platform | 
- **serviceId** | **optional.String**| id of the service associated with the instance | 
- **planId** | **optional.String**| id of the plan associated with the instance | 
- **operation** | **optional.String**| a provided identifier for the operation | 
+ **xBrokerAPIOriginatingIdentity** | **string** | identity of the user that initiated the request from the Platform | 
+ **xBrokerAPIRequestIdentity** | **string** | idenity of the request from the Platform | 
+ **serviceId** | **string** | id of the service associated with the instance | 
+ **planId** | **string** | id of the plan associated with the instance | 
+ **operation** | **string** | a provided identifier for the operation | 
 
 ### Return type
 
@@ -162,41 +258,72 @@ Name | Type | Description  | Notes
 
 ## ServiceBindingUnbinding
 
-> map[string]interface{} ServiceBindingUnbinding(ctx, xBrokerAPIVersion, instanceId, bindingId, serviceId, planId, optional)
+> map[string]interface{} ServiceBindingUnbinding(ctx, instanceId, bindingId).XBrokerAPIVersion(xBrokerAPIVersion).ServiceId(serviceId).PlanId(planId).XBrokerAPIOriginatingIdentity(xBrokerAPIOriginatingIdentity).XBrokerAPIRequestIdentity(xBrokerAPIRequestIdentity).AcceptsIncomplete(acceptsIncomplete).Execute()
+
 deprovision of a service binding
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xBrokerAPIVersion := "xBrokerAPIVersion_example" // string | version number of the Service Broker API that the Platform will use
+    instanceId := "instanceId_example" // string | instance id of instance to provision
+    bindingId := "bindingId_example" // string | binding id of binding to create
+    serviceId := "serviceId_example" // string | id of the service associated with the instance being deleted
+    planId := "planId_example" // string | id of the plan associated with the instance being deleted
+    xBrokerAPIOriginatingIdentity := "xBrokerAPIOriginatingIdentity_example" // string | identity of the user that initiated the request from the Platform (optional)
+    xBrokerAPIRequestIdentity := "xBrokerAPIRequestIdentity_example" // string | idenity of the request from the Platform (optional)
+    acceptsIncomplete := true // bool | asynchronous operations supported (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ServiceBindingsApi.ServiceBindingUnbinding(context.Background(), instanceId, bindingId).XBrokerAPIVersion(xBrokerAPIVersion).ServiceId(serviceId).PlanId(planId).XBrokerAPIOriginatingIdentity(xBrokerAPIOriginatingIdentity).XBrokerAPIRequestIdentity(xBrokerAPIRequestIdentity).AcceptsIncomplete(acceptsIncomplete).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ServiceBindingsApi.ServiceBindingUnbinding``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ServiceBindingUnbinding`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `ServiceBindingsApi.ServiceBindingUnbinding`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**xBrokerAPIVersion** | **string**| version number of the Service Broker API that the Platform will use | 
-**instanceId** | **string**| instance id of instance to provision | 
-**bindingId** | **string**| binding id of binding to create | 
-**serviceId** | **string**| id of the service associated with the instance being deleted | 
-**planId** | **string**| id of the plan associated with the instance being deleted | 
- **optional** | ***ServiceBindingUnbindingOpts** | optional parameters | nil if no parameters
+**instanceId** | **string** | instance id of instance to provision | 
+**bindingId** | **string** | binding id of binding to create | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a ServiceBindingUnbindingOpts struct
+Other parameters are passed through a pointer to a apiServiceBindingUnbindingRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **xBrokerAPIVersion** | **string** | version number of the Service Broker API that the Platform will use | 
 
 
-
-
-
- **xBrokerAPIOriginatingIdentity** | **optional.String**| identity of the user that initiated the request from the Platform | 
- **xBrokerAPIRequestIdentity** | **optional.String**| idenity of the request from the Platform | 
- **acceptsIncomplete** | **optional.Bool**| asynchronous operations supported | 
+ **serviceId** | **string** | id of the service associated with the instance being deleted | 
+ **planId** | **string** | id of the plan associated with the instance being deleted | 
+ **xBrokerAPIOriginatingIdentity** | **string** | identity of the user that initiated the request from the Platform | 
+ **xBrokerAPIRequestIdentity** | **string** | idenity of the request from the Platform | 
+ **acceptsIncomplete** | **bool** | asynchronous operations supported | 
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]interface{}**
 
 ### Authorization
 

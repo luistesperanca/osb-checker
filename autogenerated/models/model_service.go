@@ -11,6 +11,7 @@
 package openapi
 
 type Service struct {
+
 	Name string `json:"name"`
 
 	Id string `json:"id"`
@@ -33,6 +34,8 @@ type Service struct {
 	Metadata map[string]interface{} `json:"metadata,omitempty"`
 
 	DashboardClient DashboardClient `json:"dashboard_client,omitempty"`
+
+	BindingRotatable bool `json:"binding_rotatable,omitempty"`
 
 	PlanUpdateable bool `json:"plan_updateable,omitempty"`
 

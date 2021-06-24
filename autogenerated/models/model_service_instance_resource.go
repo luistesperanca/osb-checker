@@ -11,6 +11,7 @@
 package openapi
 
 type ServiceInstanceResource struct {
+
 	ServiceId string `json:"service_id,omitempty"`
 
 	PlanId string `json:"plan_id,omitempty"`
@@ -18,4 +19,8 @@ type ServiceInstanceResource struct {
 	DashboardUrl string `json:"dashboard_url,omitempty"`
 
 	Parameters map[string]interface{} `json:"parameters,omitempty"`
+
+	MaintenanceInfo MaintenanceInfo `json:"maintenance_info,omitempty"`
+
+	Metadata ServiceInstanceMetadata `json:"metadata,omitempty"`
 }

@@ -11,6 +11,7 @@
 package openapi
 
 type ServiceBindingVolumeMount struct {
+
 	Driver string `json:"driver"`
 
 	ContainerDir string `json:"container_dir"`

@@ -11,6 +11,7 @@
 package openapi
 
 type Plan struct {
+
 	Id string `json:"id"`
 
 	Name string `json:"name"`
@@ -31,4 +32,6 @@ type Plan struct {
 	MaximumPollingDuration int32 `json:"maximum_polling_duration,omitempty"`
 
 	MaintenanceInfo MaintenanceInfo `json:"maintenance_info,omitempty"`
+
+	BindingRotatable bool `json:"binding_rotatable,omitempty"`
 }
