@@ -15,11 +15,9 @@ jobs:
           python-version: 3.11.1
       - name: tag
         run: |
-          echo "version " + $VERSION
-          git tag $VERSION
-          git push origin $VERSION
-        env:
-          VERSION: ${{ env.GITHUB_RUN_ID }}
+          echo "version " + $GITHUB_RUN_ID
+          git tag $GITHUB_RUN_ID
+          git push origin $GITHUB_RUN_ID
       - name: publish
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
