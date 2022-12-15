@@ -12,4 +12,4 @@ notes_edit=$(python parse_release.py "$notes")
 echo "$notes_edit"
 #
 ## push new release
-#gh release edit "$LASTEST_TAG" --notes "$notes_edit" --draft
+gh release edit "$LASTEST_TAG" --notes "$notes_edit"
