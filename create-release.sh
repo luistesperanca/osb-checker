@@ -7,7 +7,18 @@ gh release create "$LASTEST_TAG" --generate-notes --draft
 
 sleep 2
 # python parse parse
-notes=$(gh release view $LASTEST_TAG --json body --jq .body)
+counter=0
+notes="release not found"
+until [[ $notes -ne "release not found" ]]
+do
+  notes=$(gh release view $LASTEST_TAG --json body --jq .body)
+  sleep 1
+  if [ "$counter" -gt 400 ]; then
+      echo "gh could not found release"
+      exit 1
+  fi
+done
+
 notes_edit=$(python parse_release.py "$notes")
 echo "$notes_edit"
 #
