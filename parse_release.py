@@ -15,9 +15,10 @@ def main():
         else:
             print(line, end='')
 
-    print("\n\r## Dependencies")
-    for bump in bumps:
-        print(bump, end='')
+    if len(bumps) > 0:
+        print("\n\r## Dependencies")
+        for bump in bumps:
+            print(bump, end='')
 
     print("".join(lines[-3:]), end='')
 
