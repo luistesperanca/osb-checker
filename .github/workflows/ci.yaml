@@ -20,4 +20,4 @@ jobs:
         env:
           VERSION: ${{ env.GITHUB_JOB }}
       - name: publish
-        run: ./create_release.sh
+        run: ./create-release.sh
